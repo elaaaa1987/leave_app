@@ -7,8 +7,12 @@ class CreateLeaveApplies < ActiveRecord::Migration
       t.string :session_name
       t.string :reason
       t.boolean :status
+      t.references :user
 
       t.timestamps null: false
     end
+
+    add_index :leave_applies, :user_id
+    add_index :leave_applies, :status
   end
 end
