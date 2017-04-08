@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170408110652) do
+ActiveRecord::Schema.define(version: 20170408112236) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -31,20 +31,16 @@ ActiveRecord::Schema.define(version: 20170408110652) do
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true, using: :btree
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
 
-  create_table "leaves", force: :cascade do |t|
+  create_table "leave_applies", force: :cascade do |t|
     t.datetime "start_date"
     t.datetime "end_date"
-    t.string   "leave_type",   limit: 255
+    t.integer  "leave_type",   limit: 4
     t.string   "session_name", limit: 255
-    t.text     "reason",       limit: 65535
+    t.string   "reason",       limit: 255
     t.boolean  "status"
-    t.integer  "user_id",      limit: 4
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
-
-  add_index "leaves", ["status"], name: "index_leaves_on_status", using: :btree
-  add_index "leaves", ["user_id"], name: "index_leaves_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false

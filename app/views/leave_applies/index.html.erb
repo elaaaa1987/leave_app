@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Leave Applies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Start date</th>
+      <th>End date</th>
+      <th>Leave type</th>
+      <th>Session name</th>
+      <th>Reason</th>
+      <th>Status</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @leave_applies.each do |leave_apply| %>
+      <tr>
+        <td><%= leave_apply.start_date %></td>
+        <td><%= leave_apply.end_date %></td>
+        <td><%= leave_apply.leave_type %></td>
+        <td><%= leave_apply.session_name %></td>
+        <td><%= leave_apply.reason %></td>
+        <td><%= leave_apply.status %></td>
+        <td><%= link_to 'Show', leave_apply %></td>
+        <td><%= link_to 'Edit', edit_leave_apply_path(leave_apply) %></td>
+        <td><%= link_to 'Destroy', leave_apply, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Leave apply', new_leave_apply_path %>

@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @leave_apply.start_date %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @leave_apply.end_date %>
+</p>
+
+<p>
+  <strong>Leave type:</strong>
+  <%= @leave_apply.leave_type %>
+</p>
+
+<p>
+  <strong>Session name:</strong>
+  <%= @leave_apply.session_name %>
+</p>
+
+<p>
+  <strong>Reason:</strong>
+  <%= @leave_apply.reason %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @leave_apply.status %>
+</p>
+
+<%= link_to 'Edit', edit_leave_apply_path(@leave_apply) %> |
+<%= link_to 'Back', leave_applies_path %>

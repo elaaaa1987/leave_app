@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start_date: 2017-04-08 16:52:36
+  end_date: 2017-04-08 16:52:36
+  leave_type: 1
+  session_name: MyString
+  reason: MyString
+  status: false
+
+two:
+  start_date: 2017-04-08 16:52:36
+  end_date: 2017-04-08 16:52:36
+  leave_type: 1
+  session_name: MyString
+  reason: MyString
+  status: false
